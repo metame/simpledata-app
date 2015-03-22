@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	div(class="counter container-fluid") 
+		h1= title
+		p 0
+		button(id="count") Count
+	script(type="text/javascript", src="/socket.io/socket.io.js")
+	script(type="text/javascript", src="/scripts/backend.js")
