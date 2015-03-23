@@ -1,7 +1,7 @@
 var socket = io();
 
 $(function() {
-	socket.on('counted', function(count) {
-		$('.counter').text(count);
+	socket.on('counted', function(dbCount) {
+		$('.counter').text(dbCount);
 	});
 });

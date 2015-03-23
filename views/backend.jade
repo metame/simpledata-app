@@ -3,6 +3,6 @@ extends layout
 block content
 	div(class="counter container-fluid") 
 		h1= title
-		p 0
+		p #{count}
 		button(id="count") Count
 	script(type="text/javascript", src="/scripts/backend.js")

@@ -1,21 +1,20 @@
 var express = require('express');
 var router = express.Router();
 var io = require('socket.io');
+var redis = require('./../lib/redis');
 
-/* GET home page */
-router.get('/', function(req, res) {
-	res.render('dashboard', {title: 'Data Dashboard', count: count});
+redis.get('count', function(err, value) {
+	if(err) throw err;
+
+	/* GET Dashboard */
+	router.get('/', function(req, res) {
+		res.render('dashboard', {title: 'Data Dashboard', count: value });
+	});
+
+	/* GET Backend */
+	router.get('/backend', function(req, res) {
+		res.render('backend', {title: 'Backend', count: value });
+	});
 });
-
-router.get('/backend', function(req, res) {
-	res.render('backend', {title: 'Backend'});
-});
-
-var count;
-router.post('/backend', function(req, res) {
-	count = req.body.count; 
-});
-
-
 
 module.exports = router;
