@@ -1,9 +1,11 @@
-$(document).ready(function() {
+var socket = io();
+
+$(function() {
 	$('#count').on('click',function() {
 		var counter = $('.counter p').text();
 		var countN = Number(counter);
 		countN++;
 		$('.counter p').text(countN);
-		$.post('/backend', {'count' : countN});
+		socket.emit('count', countN);
 	});
 });

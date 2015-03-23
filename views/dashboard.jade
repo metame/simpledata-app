@@ -2,4 +2,6 @@ extends layout
 
 block content
 	h1= title
-	p Current Count: #{count}
+	h2 Count:
+		p(class="counter") 0
+	script(type="text/javascript", src="/scripts/dashboard.js")
