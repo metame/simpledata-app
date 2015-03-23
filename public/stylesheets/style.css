@@ -1,3 +1,12 @@
+body {
+	background: #eee
+}
+
+.counter {
+	border: 5px solid;
+	border-radius: 50%;
+}
+
 p {
-	font: 48px bold;
+	font: 60vmin bold;
 }

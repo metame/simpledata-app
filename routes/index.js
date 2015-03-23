@@ -8,7 +8,7 @@ redis.get('count', function(err, value) {
 
 	/* GET Dashboard */
 	router.get('/', function(req, res) {
-		res.render('dashboard', {title: 'Data Dashboard', count: value });
+		res.render('dashboard', {title: 'Dashboard', count: value });
 	});
 
 	/* GET Backend */
